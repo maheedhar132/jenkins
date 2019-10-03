@@ -10,6 +10,9 @@ echo "M2_HOME = ${M2_HOME}"
 '''
 }
 }
+       stage ('clean'){
+       sh 'mvn clean'
+       }
 stage('build'){
 steps{
 sh 'mvn -Dmaven.test.failure.ignore=true install'
