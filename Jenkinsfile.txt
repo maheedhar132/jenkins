@@ -23,9 +23,7 @@ junit 'target/surefire-reports/**/*.xml'
 }
 }
 stage('SonarQube analysis') {
-      tools {
-        SonarQube 'SonarQube Scanner 2.8'
-      }
+      
       steps {
         withSonarQubeEnv('sonarqube') {
           sh 'sonar-scanner'
