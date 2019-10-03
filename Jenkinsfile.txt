@@ -19,12 +19,13 @@ success{
 
 junit 'target/surefire-reports/**/*.xml'
 }
+
+}
+}
 stage ('SonarQube Analysis'){
 
 withSonarQubeEnv ('sonarqube'){
 sh "${mvnHome}/bin/mvn sonar:sonar"
-}
-}
 }
 }
 }
