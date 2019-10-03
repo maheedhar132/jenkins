@@ -22,18 +22,15 @@ junit 'target/surefire-reports/**/*.xml'
 
 }
 }
-stage('Sonarqube') {
-    environment {
-        scannerHome = tool 'SonarQubeScanner'
-    }
-    steps {
-        withSonarQubeEnv('sonarqube') {
-            sh "${scannerHome}/bin/sonar-scanner"
+stage('SonarQube analysis') {
+      tools {
+        sonarQube 'SonarQube Scanner 2.8'
+      }
+      steps {
+        withSonarQubeEnv('SonarQube Scanner') {
+          sh 'sonar-scanner'
         }
-        timeout(time: 10, unit: 'MINUTES') {
-            waitForQualityGate abortPipeline: true
-        }
+      }
     }
-}
 }
 }
