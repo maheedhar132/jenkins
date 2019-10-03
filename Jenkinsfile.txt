@@ -19,7 +19,12 @@ success{
 
 junit 'target/surefire-reports/**/*.xml'
 }
-
+stage ('SonarQube Analysis'){
+def mvnHome = toolname: 'maven' , type: 'maven'
+withSonarQubeEnv ('sonarqube'){
+sh "${mvnHome}/bin/mvn sonar:sonar"
+}
+}
 }
 }
 }
