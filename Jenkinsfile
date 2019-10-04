@@ -28,7 +28,7 @@ stage("SonarQube analysis") {
           }
    stage('Publish') {
           steps{
-     nexusArtifactUploader artifacts: [[artifactId: 'test', classifier: 'jar', file: 'test-0.0.1-SNAPSHOT.jar', type: 'jar']], credentialsId: 'trainee', groupId: 'com.maven', nexusUrl: 'http://ec2-18-224-155-110.us-east-2.compute.amazonaws.com:8081/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'devopstraining', version: '0.0.1-SNAPSHOT'
+     nexusArtifactUploader artifacts: [[artifactId: 'test', classifier: 'jar', file: 'ws/target/test-0.0.1-SNAPSHOT.jar', type: 'jar']], credentialsId: 'trainee', groupId: 'com.maven', nexusUrl: 'http://ec2-18-224-155-110.us-east-2.compute.amazonaws.com:8081/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'devopstraining', version: '0.0.1-SNAPSHOT'
           }}
 
 }
