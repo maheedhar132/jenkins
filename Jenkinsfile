@@ -38,7 +38,7 @@ stage("SonarQube analysis") {
                         mavenAssetList: [ 
                             [classifier: '', 
                             extension: '', 
-                            filePath: "${path-to-artifact}/0.0.1-SNAPSHOT.jar"],
+                            filePath: "target/0.0.1-SNAPSHOT.jar"],
                         ],
                         mavenCoordinate: [
                             artifactId: "com.maven", 
