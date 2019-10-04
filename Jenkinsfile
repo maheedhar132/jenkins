@@ -13,6 +13,7 @@ echo "M2_HOME = ${M2_HOME}"
        stage ('clean'){
               steps{
        sh 'mvn clean'
+                     sh 'free -m'
               }}
 stage('build'){
 steps{
