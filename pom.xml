@@ -6,6 +6,12 @@
   <artifactId>test</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
+	
+	
+	<groupId>com.jenkins.war</groupId>
+  <artifactId>jenkins_war</artifactId>
+  <version>0.1</version>
+  <packaging>war</packaging>
  <build>
   <plugins>
 	<plugin>
