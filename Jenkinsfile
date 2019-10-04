@@ -18,16 +18,16 @@ stage('build'){
 steps{
 sh 'mvn -Dmaven.test.failure.ignore=true install'
 }
-post {
+/*post {
 success{
 
 junit 'target/surefire-reports/**/*.xml'
 }
 
-}
+}*/
 }
 
-stage("build & SonarQube analysis") {
+stage("SonarQube analysis") {
        
             steps {
               withSonarQubeEnv('sonarqube') {
