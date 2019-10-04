@@ -29,8 +29,9 @@ stage("SonarQube analysis") {
               }
             }
           }
-     
-
+   stage('Publish') {
+     nexusPublisher nexusInstanceId: 'http://ec2-18-224-155-110.us-east-2.compute.amazonaws.com:8081/nexus', nexusRepositoryId: 'releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'target/test-0.0.1-SNAPSHOT.jar']], mavenCoordinate: [artifactId: 'test', groupId: 'com.maven', packaging: 'jar', version: '0.0.1-SNAPSHOT']]]
+   }
 
 }
 }
