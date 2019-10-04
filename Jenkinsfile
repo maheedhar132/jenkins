@@ -31,7 +31,7 @@ stage("SonarQube analysis") {
           }
    stage('Publish') {
           steps{
-     nexusPublisher nexusInstanceId: 'localNexus', nexusRepositoryId: 'releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'target/test-0.0.1-SNAPSHOT.jar']], mavenCoordinate: [artifactId: 'test', groupId: 'com.maven', packaging: 'jar', version: '0.0.1-SNAPSHOT']]]
+     nexusPublisher nexusInstanceId: 'nexus', nexusRepositoryId: 'devopstraining', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'target/test-0.0.1-SNAPSHOT.jar']], mavenCoordinate: [artifactId: 'test', groupId: 'com.maven', packaging: 'jar', version: '0.0.1-SNAPSHOT']]]
           }}
 
 }
