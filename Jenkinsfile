@@ -21,7 +21,7 @@ stage("SonarQube analysis") {
           }
    stage('Nexus Artifact Upload') {
           steps{
-    curl -v -u trainee:trainee --upload-file test-0.0.1.jar http://ec2-18-224-155-110.us-east-2.compute.amazonaws.com:8081/nexus/#view-repositories;devopstraining~browsestorage
+    curl -v -u trainee:trainee --upload-file test-0.0.1.jar http://ec2-18-224-155-110.us-east-2.compute.amazonaws.com:8081/nexus/#view-repositories;devopstraining~browsestorage}
           }}
 
 }
