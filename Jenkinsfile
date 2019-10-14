@@ -23,7 +23,7 @@ stage("SonarQube analysis") {
    stage('Nexus Artifact Upload') {
           steps{
              withCredentials([usernamePassword(credentialsId: 'nexus-credentials', passwordVariable: 'pass', usernameVariable: 'userId')]) {
-            sh   'curl -u $userId:$pass --upload-file /var/lib/jenkins/workspace/SonarGate/target/test-0.0.1.jar http://ec2-18-224-155-110.us-east-2.compute.amazonaws.com:8081/nexus/content/repositories/devopstraining/freestyle'
+            sh   'curl -u $userId:$pass --upload-file /var/lib/jenkins/workspace/SonarGate/target/Falcons-0.0.1.jar http://ec2-18-224-155-110.us-east-2.compute.amazonaws.com:8081/nexus/content/repositories/devopstraining/freestyle'
              
              }}
           }
