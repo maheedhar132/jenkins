@@ -5,10 +5,12 @@ public class JunitTesting {
         {
         	return x*x;
         }
-        for(int i=0;i<100;i++){
-        if(i==1){
-        System.out.print("Hello");
-        }
-        }
+    public class Sub{
+    public int sub(int x)
+    {
+       return x-x;
+    }
+    }
+        
         
 }
