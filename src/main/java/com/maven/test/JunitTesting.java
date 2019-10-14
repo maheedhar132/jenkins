@@ -5,6 +5,10 @@ public class JunitTesting {
         {
         	return x*x;
         }
-        
+        for(int i=0;i<100;i++){
+        if(i==1){
+        System.out.print("Hello");
+        }
+        }
         
 }
