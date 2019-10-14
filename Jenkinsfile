@@ -19,7 +19,20 @@ stage("SonarQube analysis") {
               }
             }
           }
-   
+  
+       
+       stage("Quality Gate") {
+            steps {
+              timeout(time: 1, unit: 'HOURS') {
+                waitForQualityGate abortPipeline: true
+              }
+            }
+          }
+       
+       
+       
+       
+       
    stage('Nexus Artifact Upload') {
           steps{
              withCredentials([usernamePassword(credentialsId: 'nexus-credentials', passwordVariable: 'pass', usernameVariable: 'userId')]) {
