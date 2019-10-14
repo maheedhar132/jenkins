@@ -5,12 +5,12 @@ public class JunitTesting {
         {
         	return x*x;
         }
-    public class Sub{
+ /*   public class Sub{
     public int sub(int x)
     {
        return x-x;
     }
-    }
+    }*/
         
         
 }
